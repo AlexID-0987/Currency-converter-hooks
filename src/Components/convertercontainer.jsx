@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import currencyUrl from "../Endpoint/EndpointCurrency";
-import PropTypes from 'prop-types'
 import axios from "axios";
 import Convertercomponent from "./convertercomponent";
+import ConvertercomponenTwo from "./convertercomponenTwo";
 function Convertercontainer(props){
     const [onecurrency, setOnecurrency]=useState(1)
     const [twocurrency, setTwocurrency]=useState(1)
@@ -54,17 +54,15 @@ function Convertercontainer(props){
                 <h1>Public API converter currency</h1>
                 <div>
                     <Convertercomponent onecurrency={onecurrency} multipl={multipl} rezultchanget={rezultchanget}
-                    currency={Object.keys(items)} multipltwo={multipltwo} rezultchangetTwo={rezultchangetTwo}
-                    textCurrencyOne={textCurrencyOne} textCurrencyTwo={textCurrencyTwo} twocurrency={twocurrency}/>
+                                        currency={Object.keys(items)}
+                                        textCurrencyOne={textCurrencyOne}/>
+                    <ConvertercomponenTwo twocurrency={twocurrency} multipltwo={multipltwo}
+                                          textCurrencyTwo={textCurrencyTwo}
+                                          rezultchangetTwo={rezultchangetTwo} currency={Object.keys(items)}/>
                 </div>
             </div>
         )
     }
 }
-Convertercontainer.protoTypes={
-    textCurrencyOne:PropTypes.string.isRequired,
-    curr:PropTypes.string.isRequired,
-    rezultchanget:PropTypes.func,
-    textCurrencyTwo:PropTypes.string.isRequired
-}
+
 export default Convertercontainer
