@@ -13,7 +13,7 @@ function Convertercontainer(props){
     const [error,setError]=useState(null)
 
     useEffect(()=>{
-        axios.get(currencyUrl)
+        axios.get(props.endpoinConverter)
             .then(response=>{
                 setItems(response.data.rates)
                 setIsLoaded(true)

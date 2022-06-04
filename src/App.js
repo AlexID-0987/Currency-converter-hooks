@@ -1,13 +1,14 @@
 import './App.css';
 import Apicurrencywatch from "./Components/apicurrencywatch";
 import Endpointprivat from "./Endpoint/Endpointprivat";
-import GlobalConverterState from "./State/StateConverterApi";
+import EndpointCurrency from "./Endpoint/EndpointCurrency";
+
 
 
 function App() {
   return (
     <div className="App">
-      <Apicurrencywatch endp={Endpointprivat} state={GlobalConverterState}/>
+      <Apicurrencywatch endp={Endpointprivat} endpointConverter={EndpointCurrency}/>
     </div>
   );
 }
